@@ -501,9 +501,9 @@ def build_menu():
 def build_category(c, idx):
     items=""
     for nm,desc,price in c["items"]:
-        pr=f'<span class="text-gold2 font-bold whitespace-nowrap ml-3">{html.escape(price)}</span>' if price else ''
+        pr=f'<span class="text-gold2 font-semibold text-[13.5px] text-right ml-3 shrink-0 max-w-[46%] leading-snug">{html.escape(price)}</span>' if price else ''
         items+=f'''<li class="flex justify-between items-start gap-3 py-3 border-b border-navy/10 last:border-0">
-          <div><span class="font-semibold text-navy">{html.escape(nm)}</span><p class="text-ink/65 text-[14px] leading-snug mt-0.5">{html.escape(desc)}</p></div>{pr}</li>'''
+          <div class="min-w-0"><span class="font-semibold text-navy">{html.escape(nm)}</span><p class="text-ink/65 text-[14px] leading-snug mt-0.5">{html.escape(desc)}</p></div>{pr}</li>'''
     # two reviews (rotate)
     r1=REVIEWS[idx % len(REVIEWS)]; r2=REVIEWS[(idx+3) % len(REVIEWS)]
     revs=f'<div class="grid sm:grid-cols-2 gap-5">{review_card(r1)}{review_card(r2)}</div>'
